@@ -12,19 +12,17 @@ pub extern "C" fn _start() -> ! {
     println!("Hello World{}","!");
     XH_os::init();
 
-    x86_64::instructions::interrupts::int3();
-
     #[cfg(test)]
     test_main();
 
     println!("It did not crash!");
-    loop {}
+    XH_os::hlt_loop();
 }
 #[cfg(not(test))] // new attribute
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
     println!("{}", info);
-    loop {}
+    XH_os::hlt_loop();
 }
 #[cfg(test)]
 #[panic_handler]
