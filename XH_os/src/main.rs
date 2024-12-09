@@ -11,6 +11,8 @@ use XH_os::println;
 pub extern "C" fn _start() -> ! {
     println!("Hello World{}","!");
     XH_os::init();
+    // let ptr = 0x2031b2 as *mut u8;
+    // unsafe { *ptr = 42; }
 
     #[cfg(test)]
     test_main();
