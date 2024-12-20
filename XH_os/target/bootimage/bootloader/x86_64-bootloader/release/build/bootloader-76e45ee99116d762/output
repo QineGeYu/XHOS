@@ -1,0 +1,7 @@
+cargo:rerun-if-changed=/home/mrxie/rust/XHOS/XH_os/Cargo.toml
+cargo:rustc-link-search=native=/home/mrxie/rust/XHOS/XH_os/target/bootimage/bootloader/x86_64-bootloader/release/build/bootloader-76e45ee99116d762/out
+cargo:rustc-link-lib=static=kernel_bin-XH_os
+cargo:rerun-if-env-changed=KERNEL
+cargo:rerun-if-env-changed=KERNEL_MANIFEST
+cargo:rerun-if-changed=/home/mrxie/rust/XHOS/XH_os/target/x86_64-XH_os/debug/XH_os
+cargo:rerun-if-changed=build.rs
